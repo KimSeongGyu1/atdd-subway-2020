@@ -46,12 +46,11 @@
 2. 템플릿 리터럴을 이용해 시간 보기 좋게 렌더링
     - [ ] 적용 완료
 3. validator를 구현해 form의 유효성 검사
-    - [ ] path와 departureTime form 유효성 검사
-    - [ ] path form에서 유효성 검사
-        - [ ] source, target id 값 (양의 정수인지 등)
-    - [ ] departure Time form에서 유효성 검사
-        - [ ] dayTime: '오전' or '오후' 텍스트 값
-        - [ ] hour: 1~12 의 정수인지
-        - [ ] minute: 0~60의 정수인
+    - [x] path form에서 유효성 검사
+        - [x] source, target id 값 (양의 정수인지 등)
+    - [x] departure Time form에서 유효성 검사
+        - [x] dayTime: '오전' or '오후' 텍스트 값
+        - [x] hour: 1~12 의 정수인지
+        - [x] minute: 0~60의 정수인
 4. 길찾기를 위해 사용자가 입력한 값을 이용해 검색 결과를 불러오는 핸들러 구현
     - [x] 요금조회 버튼에 대한 이벤트 핸들러 구현
