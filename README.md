@@ -44,7 +44,7 @@
 1. 백엔드 요금 조회 api를 사용할 수 있도록 연동
     - [x] 백엔드에서 구현한 path 검색 api의 endpoint 추가
 2. 템플릿 리터럴을 이용해 시간 보기 좋게 렌더링
-    - [ ] 적용 완료
+    - [x] 적용 완료
 3. validator를 구현해 form의 유효성 검사
     - [x] path form에서 유효성 검사
         - [x] source, target id 값 (양의 정수인지 등)
