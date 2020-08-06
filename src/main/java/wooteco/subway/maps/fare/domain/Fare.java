@@ -1,5 +1,8 @@
 package wooteco.subway.maps.fare.domain;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Fare {
     private static final int FIRST_OVER_THRESHOLD = 10;
     private static final int FIRST_DISTANCE_UNIT = 5;
@@ -8,7 +11,11 @@ public class Fare {
     private static final int DEFAULT_FARE = 1250;
     private static final int OVER_FARE_UNIT = 100;
 
-    private final int fare;
+    private int fare;
+
+    protected Fare() {
+
+    }
 
     private Fare(int fare) {
         this.fare = fare;
