@@ -1,5 +1,6 @@
 package wooteco.subway.maps.map.dto;
 
+import wooteco.subway.maps.fare.domain.Fare;
 import wooteco.subway.maps.map.domain.SubwayPath;
 import wooteco.subway.maps.station.domain.Station;
 import wooteco.subway.maps.station.dto.StationResponse;
@@ -14,8 +15,10 @@ public class PathResponseAssembler {
                 .map(it -> StationResponse.of(stations.get(it)))
                 .collect(Collectors.toList());
 
+        int duration = subwayPath.calculateDuration();
         int distance = subwayPath.calculateDistance();
+        Fare fare = subwayPath.calculateDistanceFare();
 
-        return new PathResponse(stationResponses, subwayPath.calculateDuration(), distance, 1250);
+        return new PathResponse(stationResponses, duration, distance, fare.getFare());
     }
 }
