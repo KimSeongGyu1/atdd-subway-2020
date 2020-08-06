@@ -1,7 +1,6 @@
 package wooteco.subway.maps.map.dto;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import java.util.Arrays;
@@ -35,7 +34,8 @@ class PathResponseAssemblerTest {
         when(line2.getExtraFare()).thenReturn(Fare.fromNumber(900));
         when(loginMember.getAge()).thenReturn(14);
 
-        PathResponse pathResponse = PathResponseAssembler.assemble(lines, subwayPath, stations, Optional.ofNullable(loginMember));
+        PathResponse pathResponse = PathResponseAssembler.assemble(lines, subwayPath, stations,
+            Optional.ofNullable(loginMember));
 
         assertThat(pathResponse.getFare()).isEqualTo(1440);
     }

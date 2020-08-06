@@ -1,14 +1,16 @@
 package wooteco.security.web.authentication.handler;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.http.MediaType;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import wooteco.security.core.Authentication;
 import wooteco.security.core.TokenResponse;
 import wooteco.security.oauth2.token.JwtTokenProvider;
-import org.springframework.http.MediaType;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 public class IssueTokenSuccessHandler implements AuthenticationSuccessHandler {
     private JwtTokenProvider jwtTokenProvider;
@@ -18,7 +20,8 @@ public class IssueTokenSuccessHandler implements AuthenticationSuccessHandler {
     }
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+        Authentication authentication) throws IOException {
         String payload = new ObjectMapper().writeValueAsString(authentication.getPrincipal());
         String token = jwtTokenProvider.createToken(payload);
         TokenResponse tokenResponse = new TokenResponse(token);

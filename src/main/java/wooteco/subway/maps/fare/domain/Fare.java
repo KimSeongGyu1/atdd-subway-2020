@@ -56,7 +56,7 @@ public class Fare {
     }
 
     private static int calculateOverFare(int overDistance, int distanceUnit) {
-        return (int) ((Math.ceil((overDistance - 1) / distanceUnit) + 1) * OVER_FARE_UNIT);
+        return (int)((Math.ceil((overDistance - 1) / distanceUnit) + 1) * OVER_FARE_UNIT);
     }
 
     public static Fare calculateAgeDiscountedFare(Fare fare, int age) {

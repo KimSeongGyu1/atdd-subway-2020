@@ -1,6 +1,8 @@
 package wooteco.subway.common.documentation;
 
-import io.restassured.module.mockmvc.RestAssuredMockMvc;
+import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.*;
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.context.annotation.Import;
@@ -11,8 +13,7 @@ import org.springframework.restdocs.operation.preprocess.OperationResponsePrepro
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
-import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
+import io.restassured.module.mockmvc.RestAssuredMockMvc;
 
 @ExtendWith(RestDocumentationExtension.class)
 @Import(DocumentationConfig.class)

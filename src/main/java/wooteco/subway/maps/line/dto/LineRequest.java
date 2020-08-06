@@ -1,9 +1,9 @@
 package wooteco.subway.maps.line.dto;
 
+import java.time.LocalTime;
+
 import wooteco.subway.maps.fare.domain.Fare;
 import wooteco.subway.maps.line.domain.Line;
-
-import java.time.LocalTime;
 
 public class LineRequest {
     private String name;

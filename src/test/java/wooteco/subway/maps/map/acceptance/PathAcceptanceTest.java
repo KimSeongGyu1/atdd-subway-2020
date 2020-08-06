@@ -1,22 +1,22 @@
 package wooteco.subway.maps.map.acceptance;
 
-import com.google.common.collect.Lists;
-import io.restassured.response.ExtractableResponse;
-import io.restassured.response.Response;
+import static wooteco.subway.maps.line.acceptance.step.LineStationAcceptanceStep.*;
+import static wooteco.subway.maps.map.acceptance.step.PathAcceptanceStep.*;
+import static wooteco.subway.members.member.acceptance.step.MemberAcceptanceStep.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.google.common.collect.Lists;
+import io.restassured.response.ExtractableResponse;
+import io.restassured.response.Response;
 import wooteco.security.core.TokenResponse;
 import wooteco.subway.common.acceptance.AcceptanceTest;
 import wooteco.subway.maps.line.acceptance.step.LineAcceptanceStep;
 import wooteco.subway.maps.line.dto.LineResponse;
 import wooteco.subway.maps.station.acceptance.step.StationAcceptanceStep;
 import wooteco.subway.maps.station.dto.StationResponse;
-
-import static wooteco.subway.maps.line.acceptance.step.LineStationAcceptanceStep.지하철_노선에_지하철역_등록되어_있음;
-import static wooteco.subway.maps.map.acceptance.step.PathAcceptanceStep.*;
-import static wooteco.subway.members.member.acceptance.step.MemberAcceptanceStep.*;
 
 @DisplayName("지하철 경로 조회")
 public class PathAcceptanceTest extends AcceptanceTest {

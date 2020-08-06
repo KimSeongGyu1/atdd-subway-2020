@@ -1,11 +1,12 @@
 package wooteco.subway.common;
 
+import java.time.LocalTime;
+
+import org.springframework.test.util.ReflectionTestUtils;
+
 import wooteco.subway.maps.fare.domain.Fare;
 import wooteco.subway.maps.line.domain.Line;
 import wooteco.subway.maps.station.domain.Station;
-import org.springframework.test.util.ReflectionTestUtils;
-
-import java.time.LocalTime;
 
 public class TestObjectUtils {
     public static Station createStation(Long id, String name) {

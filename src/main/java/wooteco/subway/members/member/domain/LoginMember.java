@@ -47,7 +47,7 @@ public class LoginMember implements UserDetails {
 
     @Override
     public boolean checkCredentials(Object credentials) {
-        String password = (String) credentials;
+        String password = (String)credentials;
         if (this.password == null || password == null) {
             return false;
         }

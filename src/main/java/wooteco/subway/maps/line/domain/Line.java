@@ -1,11 +1,17 @@
 package wooteco.subway.maps.line.domain;
 
-import wooteco.subway.common.domain.BaseEntity;
-import wooteco.subway.maps.fare.domain.Fare;
-
-import javax.persistence.*;
 import java.time.LocalTime;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import wooteco.subway.common.domain.BaseEntity;
+import wooteco.subway.maps.fare.domain.Fare;
 
 @Entity
 public class Line extends BaseEntity {
