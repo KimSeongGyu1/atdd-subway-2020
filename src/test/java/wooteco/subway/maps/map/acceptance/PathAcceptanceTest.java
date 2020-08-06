@@ -99,7 +99,7 @@ public class PathAcceptanceTest extends AcceptanceTest {
 
         //then
         적절한_경로를_응답(response, Lists.newArrayList(교대역, 남부터미널역, 양재역));
-        총_거리와_소요_시간과_요금을_함께_응답함(response, 3, 4, 1400);
+        총_거리와_소요_시간과_요금을_함께_응답함(response, 3, 4, 1120);
     }
 
     @DisplayName("로그인 후 두 역의 최소 시간 경로를 조회한다.")
@@ -112,7 +112,7 @@ public class PathAcceptanceTest extends AcceptanceTest {
         ExtractableResponse<Response> response = 거리_경로_조회_요청_로그인("DURATION", 1L, 3L, tokenResponse);
         //then
         적절한_경로를_응답(response, Lists.newArrayList(교대역, 강남역, 양재역));
-        총_거리와_소요_시간과_요금을_함께_응답함(response, 4, 3, 1400);
+        총_거리와_소요_시간과_요금을_함께_응답함(response, 4, 3, 1120);
     }
 
     private Long 지하철_노선_등록되어_있음(String name, String color, int extraFare) {

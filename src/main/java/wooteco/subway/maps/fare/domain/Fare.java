@@ -59,6 +59,21 @@ public class Fare {
         return (int) ((Math.ceil((overDistance - 1) / distanceUnit) + 1) * OVER_FARE_UNIT);
     }
 
+    public static Fare calculateAgeDiscountedFare(Fare fare, int age) {
+        if (age == 0 || age > 20) {
+            return fare;
+        }
+        if (age > 13) {
+            int discountedFare = (fare.getFare() - 350) * 80 / 100;
+            return Fare.fromNumber(discountedFare);
+        }
+        if (age > 6) {
+            int discounterFare = (fare.getFare() - 350) * 50 / 100;
+            return Fare.fromNumber(discounterFare);
+        }
+        return Fare.fromNumber(0);
+    }
+
     public static Fare add(Fare fare1, Fare fare2) {
         return new Fare(fare1.getFare() + fare2.getFare());
     }

@@ -1,6 +1,5 @@
 package wooteco.subway.members.member.domain;
 
-
 import wooteco.security.core.userdetails.UserDetails;
 
 public class LoginMember implements UserDetails {
@@ -54,18 +53,5 @@ public class LoginMember implements UserDetails {
         }
 
         return this.password.equals(password);
-    }
-
-    public int discountFare(int fare) {
-        if (age == 0 || age > 20) {
-            return fare;
-        }
-        if (age > 13) {
-            return (fare - 350) * 80 / 100;
-        }
-        if (age > 6) {
-            return (fare - 350) * 50 / 100;
-        }
-        return 0;
     }
 }
