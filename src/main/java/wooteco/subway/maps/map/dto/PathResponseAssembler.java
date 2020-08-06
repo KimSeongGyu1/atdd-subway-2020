@@ -16,7 +16,9 @@ public class PathResponseAssembler {
                 .map(it -> StationResponse.of(stations.get(it)))
                 .collect(Collectors.toList());
 
-        Fare extraFare = Fare.fromNumber(900);
+        Fare extraFare = lines.stream()
+            .map(Line::getExtraFare)
+            .reduce(Fare.fromNumber(0), Fare::max);
         Fare distanceFare = subwayPath.calculateDistanceFare();
         Fare fare = Fare.add(distanceFare, extraFare);
 
