@@ -3,7 +3,6 @@ package wooteco.subway.maps.fare.domain;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.assertj.core.api.AbstractIntegerAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -26,8 +25,8 @@ class FareTest {
     @DisplayName("요금 합")
     @Test
     void add() {
-        Fare fare1 = Fare.from(1250);
-        Fare fare2 = Fare.from(1250);
+        Fare fare1 = Fare.fromNumber(1250);
+        Fare fare2 = Fare.fromNumber(1250);
 
         Fare sum = Fare.add(fare1, fare2);
 
