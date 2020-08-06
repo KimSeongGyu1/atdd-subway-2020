@@ -25,10 +25,6 @@ public class Fare {
         return new Fare(fare);
     }
 
-    public static Fare add(Fare fare1, Fare fare2) {
-        return new Fare(fare1.getFare() + fare2.getFare());
-    }
-
     public static Fare fromDistance(int distance) {
         int totalFare = DEFAULT_FARE
             + firstOverFare(distance - FIRST_OVER_THRESHOLD)
@@ -61,6 +57,15 @@ public class Fare {
 
     private static int calculateOverFare(int overDistance, int distanceUnit) {
         return (int) ((Math.ceil((overDistance - 1) / distanceUnit) + 1) * OVER_FARE_UNIT);
+    }
+
+    public static Fare add(Fare fare1, Fare fare2) {
+        return new Fare(fare1.getFare() + fare2.getFare());
+    }
+
+    public static Fare max(Fare fare1, Fare fare2) {
+        int max = Math.max(fare1.getFare(), fare2.getFare());
+        return new Fare(max);
     }
 
     public int getFare() {

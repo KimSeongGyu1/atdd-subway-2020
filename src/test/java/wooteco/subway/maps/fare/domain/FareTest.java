@@ -32,4 +32,15 @@ class FareTest {
 
         assertThat(sum.getFare()).isEqualTo(2500);
     }
+
+    @DisplayName("요금 최대 값")
+    @Test
+    void max() {
+        Fare fare1 = Fare.fromNumber(1250);
+        Fare fare2 = Fare.fromNumber(2500);
+
+        Fare max = Fare.max(fare1, fare2);
+
+        assertThat(max.getFare()).isEqualTo(2500);
+    }
 }
